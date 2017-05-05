@@ -8,8 +8,13 @@ var game_file_list = [
 	"libs/modules/tween/tween.js",
 	"libs/modules/res/res.js",
 	"polyfill/promise.js",
+	"bin-debug/GameEntry.js",
+	"bin-debug/GameLogin/Main/GameMgr.js",
+	"bin-debug/GameLogin/Main/TestVersionMgr.js",
+	"bin-debug/GameLogin/PlayerMgr/Data/Player.js",
+	"bin-debug/GameLogin/PlayerMgr/Data/PlayerData.js",
+	"bin-debug/GameLogin/PlayerMgr/PlayerMgr.js",
 	"bin-debug/LoadingUI.js",
-	"bin-debug/Main.js",
 	//----auto game_file_list end----
 ];
 
@@ -42,7 +47,7 @@ egret_native.egretStart = function () {
     var option = {
         //以下为自动修改，请勿修改
         //----auto option start----
-		entryClassName: "Main",
+		entryClassName: "GameEntry",
 		frameRate: 30,
 		scaleMode: "showAll",
 		contentWidth: 640,
