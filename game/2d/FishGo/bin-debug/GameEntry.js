@@ -17,12 +17,13 @@ var GameEntry = (function (_super) {
     GameEntry.prototype.onAddToStage = function (event) {
         //设置加载进度界面
         //Config to load process interface
-        this.loadingView = new LoadingUI();
-        this.stage.addChild(this.loadingView);
-        //初始化Resource资源加载库
-        //initiate Resource loading library
-        RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-        RES.loadConfig("resource/default.res.json", "resource/");
+        // this.loadingView = new LoadingUI();
+        // this.stage.addChild(this.loadingView);
+        //
+        // //初始化Resource资源加载库
+        // //initiate Resource loading library
+        // RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
+        // RES.loadConfig("resource/resource.json", "resource/");
         GameMgr.inst.start();
     };
     /**

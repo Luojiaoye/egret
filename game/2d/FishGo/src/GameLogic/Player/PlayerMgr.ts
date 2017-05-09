@@ -1,0 +1,59 @@
+/**
+ * Created by confiner.kang on 2017/5/5.
+ */
+/* 玩家管理器 */
+
+class PlayerMgr{
+    private static _inst:PlayerMgr = null;
+
+    private constructor(){
+        this.init();
+    }
+
+    // 初始化方法
+    private init():void{
+        // this._players = {};
+    }
+    
+    /* 提供单例对象PlayerMgr */
+    public static get inst():PlayerMgr{
+        if(!PlayerMgr._inst)
+            PlayerMgr._inst = new PlayerMgr();
+        return PlayerMgr._inst;
+    }
+
+    /*
+     *创建一个玩家
+     *@param id 玩家模板id
+     *@param gid 玩家全局唯一id
+     */
+    public createPlayer(id:number, gid:number):Player{
+        let player:Player = this.getPlayer(id);
+        if(!player){
+            let rid:number = GUID.guid();   // 客户端维护的渲染id
+            player = new Player(id, gid, rid);
+            GameUnitMgr.inst.addGameUnit(player);
+            RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, "1_player", gid);
+        }
+        return player;
+    }
+
+    /*移除玩家
+    * @param gid 玩家全局唯一id
+    * */
+    public removePlayer(gid:number):void{
+        let player:Player = this.getPlayer(gid);
+        if(player){
+            RenderMgr.inst.removeRenderObject(player.renderObjId);  // 移除渲染对象
+            GameUnitMgr.inst.removeGameUnitById(gid);   // 移除对象
+        }
+    }
+
+    /*获取玩家
+     *@param gid number 玩家id
+     */
+    public getPlayer(gid:number):Player{
+        return GameUnitMgr.inst.getGameUnit<Player>(gid);
+    }
+
+}

@@ -1,0 +1,23 @@
+{
+	"groups":[
+	{
+		"keys":"1_player_tex_png,1_player_tex_json,1_player_ske_json",
+		"name":"1_player"
+	}],
+	"resources":[
+	{
+		"name":"1_player_tex_png",
+		"type":"image",
+		"url":"assets/texture/player/1_player_tex.png"
+	},
+	{
+		"name":"1_player_tex_json",
+		"type":"json",
+		"url":"config/texture/player/1_player_tex.json"
+	},
+	{
+		"name":"1_player_ske_json",
+		"type":"json",
+		"url":"config/skeleton/player/1_player_ske.json"
+	}]
+}

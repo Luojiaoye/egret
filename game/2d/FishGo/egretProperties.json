@@ -20,6 +20,13 @@
     },
     {
       "name": "res"
+    },
+    {
+      "name": "tiled"
+    },
+    {
+      "name": "dragonbones"
     }
+
   ]
 }
