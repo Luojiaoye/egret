@@ -4,12 +4,20 @@
 // 游戏管理器
 class GameMgr
 {
+    private _timer:egret.Timer = null;
     private constructor(){
         this.init();
     }
 
     private init():void{
+        this._timer = new egret.Timer(50, 0);
+        this._timer.addEventListener(egret.TimerEvent.TIMER, this.beat, this);
+        this._timer.start();
+    }
 
+    // 心跳包
+    private beat(evt:egret.TimerEvent):void{
+        TestVersionMgr.inst.update();
     }
 
     private static _inst:GameMgr = null;
@@ -25,11 +33,13 @@ class GameMgr
         console.log("开始游戏");
 
         ResourceMgr.inst.initialize();  // 初始化资源管理器
+
+        // 加载必须加载的资源
+        // ResourceMgr.inst.loadGroup("main_ui", this.onResourceLoadComplete, this);
+
         TestVersionMgr.inst.initialize(); // 初始化测试版的数据
 
-        let player:Player = PlayerMgr.inst.getPlayer(1);   // 获取一个玩家
-        if(player)
-            player.born();
+        TestVersionMgr.inst.start();    // 开始游戏
     }
 
     /* 暂停游戏 */

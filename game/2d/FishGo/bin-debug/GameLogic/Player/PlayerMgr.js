@@ -29,12 +29,27 @@ var PlayerMgr = (function () {
      *@param gid 玩家全局唯一id
      */
     PlayerMgr.prototype.createPlayer = function (id, gid) {
-        var player = this.getPlayer(id);
+        var player = this.getPlayer(gid);
         if (!player) {
-            var rid = GUID.guid(); // 客户端维护的渲染id
+            var rid = GUID.build(); // 客户端维护的渲染id
             player = new Player(id, gid, rid);
             GameUnitMgr.inst.addGameUnit(player);
-            RenderMgr.inst.createDragonBoneRenderObject(rid, "1_player", gid);
+            var playerData = PlayerDataMgr.inst.getPlayerData(gid);
+            RenderMgr.inst.createDragonBoneRenderObject(rid, playerData.avatar, gid);
+        }
+        return player;
+    };
+    /*
+    * 创建玩家
+    * @param data PlayerData 玩家数据
+    * */
+    PlayerMgr.prototype.createPlayerByData = function (data) {
+        var player = this.getPlayer(data.id);
+        if (!player) {
+            var rid = GUID.build(); // 客户端维护的渲染id
+            player = new Player(data.id, data.templateId, rid);
+            GameUnitMgr.inst.addGameUnit(player);
+            RenderMgr.inst.createDragonBoneRenderObject(rid, data.avatar, data.id);
         }
         return player;
     };
@@ -46,6 +61,7 @@ var PlayerMgr = (function () {
         if (player) {
             RenderMgr.inst.removeRenderObject(player.renderObjId); // 移除渲染对象
             GameUnitMgr.inst.removeGameUnitById(gid); // 移除对象
+            PlayerDataMgr.inst.removePlayerData(gid); // 移除玩家数据
         }
     };
     /*获取玩家
@@ -53,6 +69,12 @@ var PlayerMgr = (function () {
      */
     PlayerMgr.prototype.getPlayer = function (gid) {
         return GameUnitMgr.inst.getGameUnit(gid);
+    };
+    /*
+    * 获取玩家自己
+    * */
+    PlayerMgr.prototype.getHero = function () {
+        return this.getPlayer(PlayerDataMgr.inst.getHeroData().id);
     };
     return PlayerMgr;
 }());

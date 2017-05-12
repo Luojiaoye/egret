@@ -28,12 +28,28 @@ class PlayerMgr{
      *@param gid 玩家全局唯一id
      */
     public createPlayer(id:number, gid:number):Player{
-        let player:Player = this.getPlayer(id);
+        let player:Player = this.getPlayer(gid);
         if(!player){
-            let rid:number = GUID.guid();   // 客户端维护的渲染id
+            let rid:number = GUID.build();   // 客户端维护的渲染id
             player = new Player(id, gid, rid);
-            GameUnitMgr.inst.addGameUnit(player);
-            RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, "1_player", gid);
+            GameUnitMgr.inst.addGameUnit<Player>(player);
+            let playerData:PlayerData = PlayerDataMgr.inst.getPlayerData(gid);
+            RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, playerData.avatar,gid);
+        }
+        return player;
+    }
+
+    /*
+    * 创建玩家
+    * @param data PlayerData 玩家数据
+    * */
+    public createPlayerByData(data:PlayerData):Player{
+        let player:Player = this.getPlayer(data.id);
+        if(!player){
+            let rid:number = GUID.build();   // 客户端维护的渲染id
+            player = new Player(data.id, data.templateId, rid);
+            GameUnitMgr.inst.addGameUnit<Player>(player);
+            RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, data.avatar,data.id);
         }
         return player;
     }
@@ -46,6 +62,7 @@ class PlayerMgr{
         if(player){
             RenderMgr.inst.removeRenderObject(player.renderObjId);  // 移除渲染对象
             GameUnitMgr.inst.removeGameUnitById(gid);   // 移除对象
+            PlayerDataMgr.inst.removePlayerData(gid);   // 移除玩家数据
         }
     }
 
@@ -56,4 +73,10 @@ class PlayerMgr{
         return GameUnitMgr.inst.getGameUnit<Player>(gid);
     }
 
+    /*
+    * 获取玩家自己
+    * */
+    public getHero():Player{
+        return this.getPlayer(PlayerDataMgr.inst.getHeroData().id);
+    }
 }

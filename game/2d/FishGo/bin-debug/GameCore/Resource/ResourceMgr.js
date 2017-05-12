@@ -26,24 +26,39 @@ var ResourceMgr = (function () {
     /*
      * 加载资源组
      * @param groupName 资源组名
+     * @param callback 回调函数
+     * @param obj 当前对象
+     * @param args 回调函数的参数
      * */
-    ResourceMgr.prototype.loadGroup = function (groupName) {
-        if (RES.isGroupLoaded(groupName))
-            return;
-        RES.loadGroup(groupName);
+    ResourceMgr.prototype.loadGroup = function (groupName, callback, obj, args) {
+        if (RES.isGroupLoaded(groupName)) {
+            if (callback)
+                callback.call(obj, args);
+        }
+        else {
+            this._callbacks[groupName] = { "func": callback, "inst": obj, "args": args };
+            RES.loadGroup(groupName);
+        }
+    };
+    /*
+    * 获取资源
+    * @param key 资源键值
+    * */
+    ResourceMgr.prototype.getRes = function (key) {
+        return RES.getRes(key);
     };
     // 配置文件加载完成
     ResourceMgr.prototype.onConfigComplete = function (event) {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-        // RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
         RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
     };
     // 资源组加载完成
     ResourceMgr.prototype.onResourceLoadComplete = function (event) {
-        if (this._callbacks[event.groupName]) {
-            this._callbacks[event.groupName].apply();
+        if (this._callbacks[event.groupName] && this._callbacks[event.groupName].func) {
+            this._callbacks[event.groupName].func.call(this._callbacks[event.groupName].inst, this._callbacks[event.groupName].args);
             delete this._callbacks[event.groupName];
         }
     };

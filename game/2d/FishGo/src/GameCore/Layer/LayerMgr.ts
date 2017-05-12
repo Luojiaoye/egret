@@ -31,6 +31,11 @@ class LayerMgr{
         this._stage.addChild(this._maskLayer);
     }
 
+    /*获取舞台对象*/
+    public get stage():egret.Stage{
+        return this._stage;
+    }
+
     /*获取地图层*/
     get mapLayer(): egret.Sprite {
         return this._mapLayer;

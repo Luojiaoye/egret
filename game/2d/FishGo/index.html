@@ -29,6 +29,7 @@
 	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
 	<script egret="lib" src="libs/modules/tiled/tiled.js" src-release="libs/modules/tiled/tiled.min.js"></script>
 	<script egret="lib" src="libs/modules/dragonBones/dragonBones.js" src-release="libs/modules/dragonBones/dragonBones.min.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -42,27 +43,39 @@
 	<script egret="game" src="bin-debug/GameCore/GameUnit/Base/LifeGameUnit.js"></script>
 	<script egret="game" src="bin-debug/GameCore/GameUnit/Base/MoveableGameUnit.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Render/Base/RenderObject.js"></script>
-	<script egret="game" src="bin-debug/GameCore/GameUnit/GameUnitMgr.js"></script>
+	<script egret="game" src="bin-debug/GameCore/Window/Base/WindowBase.js"></script>
 	<script egret="game" src="bin-debug/GameCore/GameUnit/Interface/ILife.js"></script>
 	<script egret="game" src="bin-debug/GameCore/GameUnit/Interface/IMoveable.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Layer/LayerMgr.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Map/MapMgr.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Render/Base/DragonBoneRenderObject.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/GameView/WindowEnum.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Render/RenderMgr.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Render/RenderType.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Resource/ResourceMgr.js"></script>
 	<script egret="game" src="bin-debug/GameCore/Util/GUID.js"></script>
-	<script egret="game" src="bin-debug/GameEntry.js"></script>
+	<script egret="game" src="bin-debug/GameCore/GameUnit/GameUnitMgr.js"></script>
+	<script egret="game" src="bin-debug/GameCore/Window/Interface/IWindow.js"></script>
+	<script egret="game" src="bin-debug/GameCore/Window/WindowMgr.js"></script>
+	<script egret="game" src="bin-debug/GameCore/GameUnit/Base/IGameUnit.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Input/Base/JoystickInput.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Input/InputMgr.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Input/Interface/IInput.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Main/GameConfig.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Main/GameMgr.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Main/TestVersionMgr.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Player/Data/Player.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Player/Data/PlayerData.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Player/PlayerDataMgr.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Player/PlayerMgr.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Scene/SceneData/SceneData.js"></script>
 	<script egret="game" src="bin-debug/GameLogic/Scene/SceneMgr.js"></script>
-	<script egret="game" src="bin-debug/GameCore/GameUnit/Base/IGameUnit.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Theme/Base/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Theme/Base/ThemeAdapter.js"></script>
+	<script egret="game" src="bin-debug/GameLogic/Theme/ThemeMgr.js"></script>
+	<script egret="game" src="bin-debug/GameView/Home/PlayerHeadInfoView.js"></script>
+	<script egret="game" src="bin-debug/GameView/Skill/SkillOperationView.js"></script>
+	<script egret="game" src="bin-debug/GameEntry.js"></script>
 	<!--game_files_end-->
 </head>
 <body>
@@ -72,8 +85,8 @@
          data-orientation="auto"
          data-scale-mode="showAll"
          data-frame-rate="30"
-         data-content-width="736"
-         data-content-height="414"
+         data-content-width="1280"
+         data-content-height="960"
          data-show-paint-rect="false"
          data-multi-fingered="2"
          data-show-fps="false" data-show-log="false"

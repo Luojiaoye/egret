@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.MainWindowSkin" minHeight="414" minWidth="763" xmlns:e="http://ns.egret.com/eui">
+    <e:Image id="headBg" width="477" height="157" source="headbg_png"/>
+    <e:Button id="btnMenu" x="300" y="200">
+        <e:skinName>
+            <e:Skin states="up,down,disabled" minHeight="50" minWidth="100">
+                <e:Image source="menu_hide_png" source.down="menu_show_png" x="0" y="3"/>
+            </e:Skin>
+        </e:skinName>
+    </e:Button>
+</e:Skin>

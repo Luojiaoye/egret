@@ -10,6 +10,9 @@ var GameConfig = (function () {
     }
     return GameConfig;
 }());
-GameConfig.MAP_PATH = "resource/config/map/";
+/*地图资源路径*/
+GameConfig.MAP_PATH = "resource/assets/map/";
+/*ui界面配置exml路径*/
+GameConfig.UI_EXML_PATH = "resource/assets/ui/";
 __reflect(GameConfig.prototype, "GameConfig");
 //# sourceMappingURL=GameConfig.js.map

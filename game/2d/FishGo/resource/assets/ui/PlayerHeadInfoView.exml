@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.PlayerHeadInfo" minHeight="157" minWidth="477" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="headbg_png" x="0" y="0"/>
+	<e:Label id="lblLv" text="12" x="167" y="14" anchorOffsetX="0" width="39" textColor="0xc9b9b9"/>
+	<e:Label id="lblGold" text="520" x="182" y="52" anchorOffsetX="0" width="107" textColor="0xC9B9B9"/>
+	<e:Label id="lblLvMoney" text="6500" x="351" y="52" anchorOffsetX="0" width="97" textColor="0xC9B9B9"/>
+	<e:Label id="lblAttackTitle" text="暴击伤害：" x="182" y="89" anchorOffsetX="0" width="150" textColor="0xC9B9B9"/>
+	<e:Label id="lblLvAttack" text="87653" x="323" y="89" anchorOffsetX="0" width="124" textColor="0xC9B9B9"/>
+
+</e:Skin>

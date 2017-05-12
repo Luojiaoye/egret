@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.SkillOperationView" minHeight="200" minWidth="225" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="normalSkill" source="middleSkill_png" x="47" y="0"/>
+	<e:Image id="bigSkill" source="normalSkill_png" x="84" y="92.5"/>
+	<e:Image id="littleSkill" source="littleSkill_png" x="0" y="98.5"/>
+
+</e:Skin>

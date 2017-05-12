@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Group class="gameView.MainWindowUI" touchThrough="true" xmlns:e="http://ns.egret.com/eui" xmlns:c="gameView.*"
+         verticalCenter="0" horizontalCenter="0" width="100%" height="320" maxWidth="800" minWidth="450">
+    <e:Image source="resource/assets/bg.jpg"   left="0" right="0" top="0" bottom="0"/>
+    <e:Button id="btnHello" verticalCenter="0" horizontalCenter="0" width="100" height="30" x="20" y="50"/>
+</e:Group>

@@ -30,6 +30,14 @@ var LayerMgr = (function () {
         this._stage.addChild(this._uiLayer);
         this._stage.addChild(this._maskLayer);
     };
+    Object.defineProperty(LayerMgr.prototype, "stage", {
+        /*获取舞台对象*/
+        get: function () {
+            return this._stage;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(LayerMgr.prototype, "mapLayer", {
         /*获取地图层*/
         get: function () {

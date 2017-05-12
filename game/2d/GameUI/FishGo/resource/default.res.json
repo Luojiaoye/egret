@@ -1,0 +1,291 @@
+{
+	"resources": [
+		{
+			"name": "main_json",
+			"type": "sheet",
+			"url": "assets/atlas/main.json",
+			"subkeys": "add,bag,format,friend,headBg,market,menu_hide,menu_show,mission,recharge,role,sign,skill,vip"
+		},
+		{
+			"name": "1_player_ske_json",
+			"type": "json",
+			"url": "assets/dragonBone/1_player_ske.json"
+		},
+		{
+			"name": "1_player_tex_json",
+			"type": "json",
+			"url": "assets/dragonBone/1_player_tex.json"
+		},
+		{
+			"name": "1_player_tex_png",
+			"type": "image",
+			"url": "assets/dragonBone/1_player_tex.png"
+		},
+		{
+			"name": "2_player_ske_json",
+			"type": "json",
+			"url": "assets/dragonBone/2_player_ske.json"
+		},
+		{
+			"name": "2_player_tex_json",
+			"type": "json",
+			"url": "assets/dragonBone/2_player_tex.json"
+		},
+		{
+			"name": "2_player_tex_png",
+			"type": "image",
+			"url": "assets/dragonBone/2_player_tex.png"
+		},
+		{
+			"name": "add_png",
+			"type": "image",
+			"url": "assets/image/add.png"
+		},
+		{
+			"name": "bag_png",
+			"type": "image",
+			"url": "assets/image/bag.png"
+		},
+		{
+			"name": "btn_normal_png",
+			"type": "image",
+			"url": "assets/image/btn_normal.png"
+		},
+		{
+			"name": "btn_selected_png",
+			"type": "image",
+			"url": "assets/image/btn_selected.png"
+		},
+		{
+			"name": "close_normal_png",
+			"type": "image",
+			"url": "assets/image/close_normal.png"
+		},
+		{
+			"name": "close_selected_png",
+			"type": "image",
+			"url": "assets/image/close_selected.png"
+		},
+		{
+			"name": "format_png",
+			"type": "image",
+			"url": "assets/image/format.png"
+		},
+		{
+			"name": "friend_png",
+			"type": "image",
+			"url": "assets/image/friend.png"
+		},
+		{
+			"name": "headBg_png",
+			"type": "image",
+			"url": "assets/image/headBg.png"
+		},
+		{
+			"name": "joystick_btn_active_png",
+			"type": "image",
+			"url": "assets/image/joystick_btn_active.png"
+		},
+		{
+			"name": "joystick_btn_normal_png",
+			"type": "image",
+			"url": "assets/image/joystick_btn_normal.png"
+		},
+		{
+			"name": "joystic_bg_png",
+			"type": "image",
+			"url": "assets/image/joystic_bg.png"
+		},
+		{
+			"name": "joystic_btn_touch_png",
+			"type": "image",
+			"url": "assets/image/joystic_btn_touch.png"
+		},
+		{
+			"name": "market_png",
+			"type": "image",
+			"url": "assets/image/market.png"
+		},
+		{
+			"name": "menu_hide_png",
+			"type": "image",
+			"url": "assets/image/menu_hide.png"
+		},
+		{
+			"name": "menu_show_png",
+			"type": "image",
+			"url": "assets/image/menu_show.png"
+		},
+		{
+			"name": "mission_png",
+			"type": "image",
+			"url": "assets/image/mission.png"
+		},
+		{
+			"name": "obstacle_png",
+			"type": "image",
+			"url": "assets/image/obstacle.png"
+		},
+		{
+			"name": "recharge_png",
+			"type": "image",
+			"url": "assets/image/recharge.png"
+		},
+		{
+			"name": "role_png",
+			"type": "image",
+			"url": "assets/image/role.png"
+		},
+		{
+			"name": "sign_png",
+			"type": "image",
+			"url": "assets/image/sign.png"
+		},
+		{
+			"name": "skill_png",
+			"type": "image",
+			"url": "assets/image/skill.png"
+		},
+		{
+			"name": "tab_normal_png",
+			"type": "image",
+			"url": "assets/image/tab_normal.png"
+		},
+		{
+			"name": "tab_selected_png",
+			"type": "image",
+			"url": "assets/image/tab_selected.png"
+		},
+		{
+			"name": "vip_png",
+			"type": "image",
+			"url": "assets/image/vip.png"
+		},
+		{
+			"name": "walkable_png",
+			"type": "image",
+			"url": "assets/image/walkable.png"
+		},
+		{
+			"name": "theme_json",
+			"type": "json",
+			"url": "assets/theme/theme.json"
+		},
+		{
+			"name": "resource_json",
+			"type": "json",
+			"url": "resource.json"
+		},
+		{
+			"name": "2_jpg",
+			"type": "image",
+			"url": "assets/image/map/2.jpg"
+		},
+		{
+			"name": "3_jpg",
+			"type": "image",
+			"url": "assets/image/map/3.jpg"
+		},
+		{
+			"name": "4_jpg",
+			"type": "image",
+			"url": "assets/image/map/4.jpg"
+		},
+		{
+			"name": "5_jpg",
+			"type": "image",
+			"url": "assets/image/map/5.jpg"
+		},
+		{
+			"name": "1_jpg",
+			"type": "image",
+			"url": "assets/image/map/1.jpg"
+		},
+		{
+			"name": "rbtn_up_png",
+			"type": "image",
+			"url": "assets/image/component/rbtn_up.png"
+		},
+		{
+			"name": "rbtn_down_png",
+			"type": "image",
+			"url": "assets/image/component/rbtn_down.png"
+		},
+		{
+			"name": "rbtn_small_up_png",
+			"type": "image",
+			"url": "assets/image/component/rbtn_small_up.png"
+		},
+		{
+			"name": "rbtn_small_down_png",
+			"type": "image",
+			"url": "assets/image/component/rbtn_small_down.png"
+		},
+		{
+			"name": "bbtn_small_down_png",
+			"type": "image",
+			"url": "assets/image/component/bbtn_small_down.png"
+		},
+		{
+			"name": "bbtn_small_up_png",
+			"type": "image",
+			"url": "assets/image/component/bbtn_small_up.png"
+		},
+		{
+			"name": "bbtn_up_png",
+			"type": "image",
+			"url": "assets/image/component/bbtn_up.png"
+		},
+		{
+			"name": "bbtn_down_png",
+			"type": "image",
+			"url": "assets/image/component/bbtn_down.png"
+		},
+		{
+			"name": "win_foot_png",
+			"type": "image",
+			"url": "assets/image/component/win_foot.png"
+		},
+		{
+			"name": "win_body_png",
+			"type": "image",
+			"url": "assets/image/component/win_body.png"
+		},
+		{
+			"name": "win_head_png",
+			"type": "image",
+			"url": "assets/image/component/win_head.png"
+		},
+		{
+			"name": "游戏技能特效素材(32)-5_爱给网_2gei_com_png",
+			"type": "image",
+			"url": "assets/image/游戏技能特效素材(32)-5_爱给网_2gei_com.png"
+		},
+		{
+			"name": "bigSkill_png",
+			"type": "image",
+			"url": "assets/image/bigSkill.png"
+		},
+		{
+			"name": "middleSkill_png",
+			"type": "image",
+			"url": "assets/image/middleSkill.png"
+		},
+		{
+			"name": "littleSkill_png",
+			"type": "image",
+			"url": "assets/image/littleSkill.png"
+		},
+		{
+			"name": "normalSkill_png",
+			"type": "image",
+			"url": "assets/image/normalSkill.png"
+		}
+	],
+	"groups": [
+		{
+			"name": "preload",
+			"keys": "main_json,1_player_ske_json,1_player_tex_json,1_player_tex_png,2_player_ske_json,2_player_tex_json,2_player_tex_png,add_png,bag_png,btn_normal_png,btn_selected_png,close_normal_png,close_selected_png,format_png,friend_png,headBg_png,joystick_btn_active_png,joystick_btn_normal_png,joystic_bg_png,joystic_btn_touch_png,market_png,menu_hide_png,menu_show_png,mission_png,obstacle_png,recharge_png,role_png,sign_png,skill_png,tab_normal_png,tab_selected_png,vip_png,walkable_png,theme_json,resource_json,2_jpg,3_jpg,4_jpg,5_jpg,1_jpg,rbtn_up_png,rbtn_down_png,rbtn_small_up_png,rbtn_small_down_png,bbtn_small_down_png,bbtn_small_up_png,bbtn_up_png,bbtn_down_png,win_foot_png,win_body_png,win_head_png,游戏技能特效素材(32)-5_爱给网_2gei_com_png,bigSkill_png,middleSkill_png,littleSkill_png,normalSkill_png"
+		}
+	]
+}

@@ -30,28 +30,23 @@ var RenderMgr = (function () {
         }
         else {
             // 没有创建过
-            ResourceMgr.inst.loadGroup(dragonBoneName);
-            RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, function (event) {
-                if (dragonBoneName == event.groupName) {
-                    // 此处没有移除会影响性能
-                    var renderObj = new DragonBoneRenderObject();
-                    var armature = _this.createDragonBone(dragonBoneName);
-                    if (armature) {
-                        renderObj.initialize(id, armature.display);
-                        renderObj.armatureDisplay = _this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
-                        renderObj.armatureDisplay.scaleX = 0.3;
-                        renderObj.armatureDisplay.scaleY = 0.3;
-                    }
-                    if (gid > 0)
-                        renderObj.gameUnitId = gid;
-                    _this._renderDic[id] = renderObj;
-                    // 添加到舞台
-                    LayerMgr.inst.sceneLayer.addChild(renderObj.armatureDisplay);
-                    var gameUnit = GameUnitMgr.inst.getGameUnit(gid);
-                    if (gameUnit) {
-                        gameUnit.defaultAction();
-                    }
-                    renderObj.armatureDisplay.animation.play("steady");
+            ResourceMgr.inst.loadGroup(dragonBoneName, function () {
+                var renderObj = new DragonBoneRenderObject();
+                var armature = _this.createDragonBone(dragonBoneName);
+                if (armature) {
+                    renderObj.initialize(id, armature.display);
+                    renderObj.armatureDisplay = _this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
+                    renderObj.armatureDisplay.scaleX = 0.5;
+                    renderObj.armatureDisplay.scaleY = 0.5;
+                }
+                if (gid > 0)
+                    renderObj.gameUnitId = gid;
+                _this._renderDic[id] = renderObj;
+                // 添加到舞台
+                LayerMgr.inst.sceneLayer.addChild(renderObj.armatureDisplay);
+                var gameUnit = GameUnitMgr.inst.getGameUnit(gid);
+                if (gameUnit) {
+                    gameUnit.defaultAction();
                 }
             }, this);
         }

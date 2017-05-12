@@ -6,7 +6,7 @@ class GUID{
     private static _guid:number = 0;
 
     /* 生成唯一id*/
-    public static guid():number{
+    public static build():number{
         return ++this._guid;
     }
 }

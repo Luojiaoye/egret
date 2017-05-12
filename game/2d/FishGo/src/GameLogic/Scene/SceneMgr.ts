@@ -19,11 +19,31 @@ class SceneMgr{
      * @param id 场景id
      * */
     public enter(id:number):void{
+        console.log("enter scene");
         if(this.verify(id)){
             this._currentSceneId = id;
             // 处理场景的逻辑写在这里
 
-            MapMgr.inst.render(1);
+            // 显示场景ui
+            this.sceneUI();
+
+            MapMgr.inst.render(6);
+        }
+    }
+
+    // 场景ui
+    private sceneUI():void{
+        switch(this._currentSceneId){
+            case 6:
+                // 显示头像
+                let headInfoView:PlayerHeadInfoView = new PlayerHeadInfoView(WindowEnum.HEAD_INFO);
+                WindowMgr.inst.show(headInfoView.name);
+                // 显示技能操作
+                let skillOperationView:SkillOperationView = new SkillOperationView(WindowEnum.SKILL_OPERATION);
+                skillOperationView.x = 1050;
+                skillOperationView.y = 720;
+                WindowMgr.inst.show(skillOperationView.name);
+                break;
         }
     }
 

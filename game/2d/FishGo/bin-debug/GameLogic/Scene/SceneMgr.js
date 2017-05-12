@@ -18,10 +18,28 @@ var SceneMgr = (function () {
      * @param id 场景id
      * */
     SceneMgr.prototype.enter = function (id) {
+        console.log("enter scene");
         if (this.verify(id)) {
             this._currentSceneId = id;
             // 处理场景的逻辑写在这里
-            MapMgr.inst.render(1);
+            // 显示场景ui
+            this.sceneUI();
+            MapMgr.inst.render(6);
+        }
+    };
+    // 场景ui
+    SceneMgr.prototype.sceneUI = function () {
+        switch (this._currentSceneId) {
+            case 6:
+                // 显示头像
+                var headInfoView = new PlayerHeadInfoView(WindowEnum.HEAD_INFO);
+                WindowMgr.inst.show(headInfoView.name);
+                // 显示技能操作
+                var skillOperationView = new SkillOperationView(WindowEnum.SKILL_OPERATION);
+                skillOperationView.x = 1050;
+                skillOperationView.y = 720;
+                WindowMgr.inst.show(skillOperationView.name);
+                break;
         }
     };
     /*退出场景*/

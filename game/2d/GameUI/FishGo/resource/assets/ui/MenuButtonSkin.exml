@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.MenuButtonSkin" states="up,down,disabled" width="110" height="111" xmlns:e="http://ns.egret.com/eui">
+    <e:Image width="100%" height="100%"
+             source="resource/assets/image/menu_show.png"
+             source.down="resource/assets/image/menu_hide.png"/>
+</e:Skin>

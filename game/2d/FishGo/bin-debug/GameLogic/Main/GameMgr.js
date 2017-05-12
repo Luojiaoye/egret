@@ -7,9 +7,17 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 // 游戏管理器
 var GameMgr = (function () {
     function GameMgr() {
+        this._timer = null;
         this.init();
     }
     GameMgr.prototype.init = function () {
+        this._timer = new egret.Timer(50, 0);
+        this._timer.addEventListener(egret.TimerEvent.TIMER, this.beat, this);
+        this._timer.start();
+    };
+    // 心跳包
+    GameMgr.prototype.beat = function (evt) {
+        TestVersionMgr.inst.update();
     };
     Object.defineProperty(GameMgr, "inst", {
         get: function () {
@@ -24,10 +32,10 @@ var GameMgr = (function () {
     GameMgr.prototype.start = function () {
         console.log("开始游戏");
         ResourceMgr.inst.initialize(); // 初始化资源管理器
+        // 加载必须加载的资源
+        // ResourceMgr.inst.loadGroup("main_ui", this.onResourceLoadComplete, this);
         TestVersionMgr.inst.initialize(); // 初始化测试版的数据
-        var player = PlayerMgr.inst.getPlayer(1); // 获取一个玩家
-        if (player)
-            player.born();
+        TestVersionMgr.inst.start(); // 开始游戏
     };
     /* 暂停游戏 */
     GameMgr.prototype.pause = function () {

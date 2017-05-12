@@ -1,0 +1,41 @@
+{
+  "autoGenerateExmlsList": true,
+  "exmls": [
+    "resource/assets/ui/aboutUISkin.exml",
+    "resource/assets/ui/goodsListIRSkin.exml",
+    "resource/assets/ui/goodsUISkin.exml",
+    "resource/assets/ui/herosListIRSkin.exml",
+    "resource/assets/ui/herosUISkin.exml",
+    "resource/assets/ui/homeUISkin.exml",
+    "resource/assets/ui/profileSkillListIRSkin.exml",
+    "resource/assets/ui/profileUISkin.exml",
+    "resource/assets/default_skins/ButtonSkin.exml",
+    "resource/assets/default_skins/CheckBoxSkin.exml",
+    "resource/assets/default_skins/HScrollBarSkin.exml",
+    "resource/assets/default_skins/HSliderSkin.exml",
+    "resource/assets/default_skins/ItemRendererSkin.exml",
+    "resource/assets/default_skins/PanelSkin.exml",
+    "resource/assets/default_skins/ProgressBarSkin.exml",
+    "resource/assets/default_skins/RadioButtonSkin.exml",
+    "resource/assets/default_skins/ScrollerSkin.exml",
+    "resource/assets/default_skins/TextInputSkin.exml",
+    "resource/assets/default_skins/ToggleSwitchSkin.exml",
+    "resource/assets/default_skins/VScrollBarSkin.exml",
+    "resource/assets/default_skins/VSliderSkin.exml"
+  ],
+  "skins": {
+    "eui.Button": "resource/assets/default_skins/ButtonSkin.exml",
+    "eui.CheckBox": "resource/assets/default_skins/CheckBoxSkin.exml",
+    "eui.HScrollBar": "resource/assets/default_skins/HScrollBarSkin.exml",
+    "eui.HSlider": "resource/assets/default_skins/HSliderSkin.exml",
+    "eui.ItemRenderer": "resource/assets/default_skins/ItemRendererSkin.exml",
+    "eui.Panel": "resource/assets/default_skins/PanelSkin.exml",
+    "eui.ProgressBar": "resource/assets/default_skins/ProgressBarSkin.exml",
+    "eui.RadioButton": "resource/assets/default_skins/RadioButtonSkin.exml",
+    "eui.Scroller": "resource/assets/default_skins/ScrollerSkin.exml",
+    "eui.TextInput": "resource/assets/default_skins/TextInputSkin.exml",
+    "eui.ToggleSwitch": "resource/assets/default_skins/ToggleSwitchSkin.exml",
+    "eui.VScrollBar": "resource/assets/default_skins/VScrollBarSkin.exml",
+    "eui.VSlider": "resource/assets/default_skins/VSliderSkin.exml"
+  }
+}

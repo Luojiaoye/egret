@@ -26,18 +26,33 @@ class ResourceMgr{
     /*
      * 加载资源组
      * @param groupName 资源组名
+     * @param callback 回调函数
+     * @param obj 当前对象
+     * @param args 回调函数的参数
      * */
-    public loadGroup(groupName:string):void{
-        if(RES.isGroupLoaded(groupName))
-            return;
+    public loadGroup(groupName:string, callback:Function, obj?:any, args?:any):void{
+        if(RES.isGroupLoaded(groupName)){
+            if(callback)
+                callback.call(obj, args);
+        }
+        else{
+            this._callbacks[groupName] = {"func":callback, "inst":obj, "args":args};
+            RES.loadGroup(groupName);
+        }
+    }
 
-        RES.loadGroup(groupName);
+    /*
+    * 获取资源
+    * @param key 资源键值
+    * */
+    public getRes(key:string):any{
+        return RES.getRes(key);
     }
 
     // 配置文件加载完成
     private onConfigComplete(event: RES.ResourceEvent): void {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-        // RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
         RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
@@ -45,8 +60,8 @@ class ResourceMgr{
 
     // 资源组加载完成
     private onResourceLoadComplete(event: RES.ResourceEvent){
-        if(this._callbacks[event.groupName]){
-            this._callbacks[event.groupName].apply();
+        if(this._callbacks[event.groupName] && this._callbacks[event.groupName].func){
+            this._callbacks[event.groupName].func.call(this._callbacks[event.groupName].inst, this._callbacks[event.groupName].args);
             delete this._callbacks[event.groupName];
         }
     }

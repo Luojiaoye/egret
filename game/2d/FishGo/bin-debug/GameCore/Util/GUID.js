@@ -9,7 +9,7 @@ var GUID = (function () {
     function GUID() {
     }
     /* 生成唯一id*/
-    GUID.guid = function () {
+    GUID.build = function () {
         return ++this._guid;
     };
     return GUID;

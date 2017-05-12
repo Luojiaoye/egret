@@ -16,6 +16,12 @@ var Player = (function (_super) {
         var _this = _super.call(this, gid, rid) || this;
         // 玩家id
         _this._id = 0;
+        // x速度
+        _this.speedX = 0;
+        // y速度
+        _this.speedY = 0;
+        // 使用技能中
+        _this._useCD = false;
         // 化身
         _this._avatar = null;
         _this._id = id;
@@ -31,21 +37,68 @@ var Player = (function (_super) {
     });
     /*覆盖父类的默认行为*/
     Player.prototype.defaultAction = function () {
-        this.born();
+        console.log("玩家：" + this._id);
+        this.born(this.x, this.y); // 配置或者服务器的出生点
     };
     /*出生*/
-    Player.prototype.born = function () {
-        console.log(dragonBones.DragonBones.VERSION);
+    Player.prototype.born = function (x, y) {
+        this.x = x;
+        this.y = y;
         console.log("玩家出生");
         if (this.avatar) {
-            this.avatar.armatureDisplay.x = 500;
-            this.avatar.armatureDisplay.y = 400;
-            this.avatar.armatureDisplay.animation.play("steady2");
+            this.avatar.armatureDisplay.x = this.x;
+            this.avatar.armatureDisplay.y = this.y;
+            var aniName = this._id == 2 ? "Move" : "steady";
+            this.playAnimation(aniName, 0);
         }
     };
     /*站立*/
     Player.prototype.stand = function () {
+        if (this._useCD)
+            return;
         console.log("玩家站立");
+        var aniName = this._id == 2 ? "Move" : "steady";
+        this.playAnimation(aniName, 0);
+    };
+    /*行走*/
+    Player.prototype.walk = function () {
+        if (this._useCD)
+            return;
+        var aniName = this._id == 2 ? "Move" : "steady2";
+        this.playAnimation(aniName, 0);
+        if (this.avatar) {
+            this.avatar.armatureDisplay.scaleX = this.speedX < 0 ? -0.5 : 0.5;
+            var destX = this.avatar.armatureDisplay.x + this.speedX * this.speed * this.sp;
+            var destY = this.avatar.armatureDisplay.y + this.speedY * this.speed * this.sp;
+            if (MapMgr.inst.destVerfy(destX, destY)) {
+                this.avatar.armatureDisplay.x = destX;
+                this.avatar.armatureDisplay.y = destY;
+            }
+        }
+    };
+    /*使用技能*/
+    Player.prototype.useSkill = function (skillId) {
+        this._useCD = true;
+        var animations = ["steady", "attack1", "attack1_+1", "attack2"];
+        this.playAnimation(animations[skillId]);
+    };
+    // 播放动画
+    Player.prototype.playAnimation = function (aniName, playTimes) {
+        if (playTimes === void 0) { playTimes = 1; }
+        if (this.avatar) {
+            var state = this.avatar.armatureDisplay.animation.getState(aniName);
+            if (!state || state && !state.isPlaying) {
+                this.avatar.armatureDisplay.animation.play(aniName, playTimes);
+                console.log("动画名称： " + aniName + " 播放次数： " + playTimes);
+            }
+            if (!this.avatar.armatureDisplay.armature.hasEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE)) {
+                this.avatar.armatureDisplay.armature.addEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE, this.playComplete, this);
+            }
+        }
+    };
+    Player.prototype.playComplete = function (evt) {
+        console.log("播放完动画：");
+        this._useCD = false;
     };
     Object.defineProperty(Player.prototype, "avatar", {
         get: function () {
@@ -56,6 +109,10 @@ var Player = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    /*是否是主角*/
+    Player.prototype.isHero = function () {
+        return this.gameUnitId == PlayerDataMgr.inst.getHeroData().id;
+    };
     return Player;
 }(MoveableGameUnit));
 __reflect(Player.prototype, "Player");
