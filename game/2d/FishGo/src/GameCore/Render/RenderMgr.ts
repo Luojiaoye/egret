@@ -16,6 +16,20 @@ class RenderMgr{
     }
 
     /*
+    * 创建地图渲染对象
+    * @param id 渲染id
+    * @param mapId 地图id
+    * */
+    public createMapRenderObject<T extends MapRenderObject>(id:number, mapId:number):void{
+        if(this._renderDic[id])
+            return;
+
+        let renderObj:MapRenderObject = new MapRenderObject(id);
+        renderObj.mapId = mapId;
+        this._renderDic[id] = renderObj;
+    }
+
+    /*
      *创建渲染对象
      * @param id 渲染对象id
      * @param dragonBoneName 龙骨渲染对象名字
@@ -32,17 +46,16 @@ class RenderMgr{
                 let armature:dragonBones.Armature = this.createDragonBone(dragonBoneName);
                 if(armature){
                     renderObj.initialize(id, armature.display);
-                    renderObj.armatureDisplay = this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
-                    renderObj.armatureDisplay.scaleX = 0.5;
-                    renderObj.armatureDisplay.scaleY = 0.5;
+                    renderObj.display = this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
                 }
 
                 if(gid > 0)
                     renderObj.gameUnitId = gid;
                 this._renderDic[id] = renderObj;
 
-                // 添加到舞台
-                LayerMgr.inst.sceneLayer.addChild(renderObj.armatureDisplay);
+                // 渲染
+                renderObj.render();
+
                 let gameUnit:T = GameUnitMgr.inst.getGameUnit<T>(gid);
                 if(gameUnit){
                     gameUnit.defaultAction();
@@ -66,7 +79,7 @@ class RenderMgr{
      *获取渲染对象
      *@渲染对象id
      **/
-    public getRenderObject<T extends RenderObject>(id:number):T{
+    public getRenderObject<T extends IRender>(id:number):T{
         return this._renderDic[id];
     }
 

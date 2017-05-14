@@ -17,6 +17,18 @@ var RenderMgr = (function () {
         this._dragonBoneFactory = new dragonBones.EgretFactory();
     };
     /*
+    * 创建地图渲染对象
+    * @param id 渲染id
+    * @param mapId 地图id
+    * */
+    RenderMgr.prototype.createMapRenderObject = function (id, mapId) {
+        if (this._renderDic[id])
+            return;
+        var renderObj = new MapRenderObject(id);
+        renderObj.mapId = mapId;
+        this._renderDic[id] = renderObj;
+    };
+    /*
      *创建渲染对象
      * @param id 渲染对象id
      * @param dragonBoneName 龙骨渲染对象名字
@@ -35,15 +47,13 @@ var RenderMgr = (function () {
                 var armature = _this.createDragonBone(dragonBoneName);
                 if (armature) {
                     renderObj.initialize(id, armature.display);
-                    renderObj.armatureDisplay = _this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
-                    renderObj.armatureDisplay.scaleX = 0.5;
-                    renderObj.armatureDisplay.scaleY = 0.5;
+                    renderObj.display = _this._dragonBoneFactory.buildArmatureDisplay(dragonBoneName);
                 }
                 if (gid > 0)
                     renderObj.gameUnitId = gid;
                 _this._renderDic[id] = renderObj;
-                // 添加到舞台
-                LayerMgr.inst.sceneLayer.addChild(renderObj.armatureDisplay);
+                // 渲染
+                renderObj.render();
                 var gameUnit = GameUnitMgr.inst.getGameUnit(gid);
                 if (gameUnit) {
                     gameUnit.defaultAction();

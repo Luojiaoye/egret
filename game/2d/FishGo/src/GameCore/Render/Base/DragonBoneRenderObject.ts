@@ -2,20 +2,26 @@
  * Created by confiner.kang on 2017/5/8.
  */
 /*骨骼动画渲染对象*/
-class DragonBoneRenderObject extends RenderObject{
+class DragonBoneRenderObject extends RenderObject implements  IRender{
     private _armatureDisplay:dragonBones.EgretArmatureDisplay = null;   // 龙骨显示对象
     public constructor(){
         super();
     }
 
-    /*龙骨显示对象*/
-    set armatureDisplay(value: dragonBones.EgretArmatureDisplay) {
+    /*显示对象*/
+    public get display():dragonBones.EgretArmatureDisplay{
+        return this._armatureDisplay;
+    }
+
+    /*显示对象*/
+    public set display(value:dragonBones.EgretArmatureDisplay) {
         this._armatureDisplay = value;
     }
 
-    /*龙骨显示对象*/
-    get armatureDisplay(): dragonBones.EgretArmatureDisplay {
-        return this._armatureDisplay;
+    /*渲染*/
+    public render():void{
+        // 添加到舞台
+        LayerMgr.inst.sceneLayer.addChild(this.display);
     }
 
     /* 销毁渲染对象

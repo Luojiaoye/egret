@@ -5,6 +5,7 @@
 
 class PlayerMgr{
     private static _inst:PlayerMgr = null;
+    private _players:Array<number> = null;
 
     private constructor(){
         this.init();
@@ -12,7 +13,7 @@ class PlayerMgr{
 
     // 初始化方法
     private init():void{
-        // this._players = {};
+        this._players = new Array<number>();
     }
     
     /* 提供单例对象PlayerMgr */
@@ -20,6 +21,18 @@ class PlayerMgr{
         if(!PlayerMgr._inst)
             PlayerMgr._inst = new PlayerMgr();
         return PlayerMgr._inst;
+    }
+
+    /*
+    * 更新*/
+    public update():void{
+        let player:Player = null;
+        for(let id of this._players){
+            player = this.getPlayer(id);
+            if(!player)
+                continue;
+            player.update();
+        }
     }
 
     /*
@@ -32,6 +45,7 @@ class PlayerMgr{
         if(!player){
             let rid:number = GUID.build();   // 客户端维护的渲染id
             player = new Player(id, gid, rid);
+            this._players.push(gid);
             GameUnitMgr.inst.addGameUnit<Player>(player);
             let playerData:PlayerData = PlayerDataMgr.inst.getPlayerData(gid);
             RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, playerData.avatar,gid);
@@ -48,6 +62,7 @@ class PlayerMgr{
         if(!player){
             let rid:number = GUID.build();   // 客户端维护的渲染id
             player = new Player(data.id, data.templateId, rid);
+            this._players.push(data.id);
             GameUnitMgr.inst.addGameUnit<Player>(player);
             RenderMgr.inst.createDragonBoneRenderObject<Player>(rid, data.avatar,data.id);
         }
@@ -63,6 +78,8 @@ class PlayerMgr{
             RenderMgr.inst.removeRenderObject(player.renderObjId);  // 移除渲染对象
             GameUnitMgr.inst.removeGameUnitById(gid);   // 移除对象
             PlayerDataMgr.inst.removePlayerData(gid);   // 移除玩家数据
+            if(this._players.indexOf(gid) > -1)
+                this._players.slice(this._players.indexOf(gid), 1);
         }
     }
 

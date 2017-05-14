@@ -55,4 +55,26 @@ var PlayerData = (function () {
     return PlayerData;
 }());
 __reflect(PlayerData.prototype, "PlayerData");
+var ActionAni = (function () {
+    function ActionAni() {
+        // 出生
+        this.born = "born";
+        // 站立
+        this.stand = "stand";
+        // 行走
+        this.walk = "walk";
+        // 普通攻击
+        this.attack = "attack";
+        // 受击
+        this.damage = "defense";
+        // 死亡
+        this.death = "death";
+        // 技能攻击
+        this.skill = "skill";
+        // 大招攻击
+        this.unique = "unique";
+    }
+    return ActionAni;
+}());
+__reflect(ActionAni.prototype, "ActionAni");
 //# sourceMappingURL=PlayerData.js.map

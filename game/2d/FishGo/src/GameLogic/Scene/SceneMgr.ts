@@ -19,7 +19,6 @@ class SceneMgr{
      * @param id 场景id
      * */
     public enter(id:number):void{
-        console.log("enter scene");
         if(this.verify(id)){
             this._currentSceneId = id;
             // 处理场景的逻辑写在这里
@@ -27,7 +26,13 @@ class SceneMgr{
             // 显示场景ui
             this.sceneUI();
 
-            MapMgr.inst.render(6);
+            let rid:number = GUID.build();
+            let mapId:number = 6;
+            let map:TiledMap = new TiledMap(mapId, 32, 32);
+            RenderMgr.inst.createMapRenderObject<MapRenderObject>(rid, map.id);
+            map.renderObjId = rid;
+            map.initialize();
+            MapMgr.inst.addMap<TiledMap>(map);
         }
     }
 

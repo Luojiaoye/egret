@@ -18,10 +18,6 @@ var MoveableGameUnit = (function (_super) {
         _this.speed = 0;
         return _this;
     }
-    /*默认行为*/
-    MoveableGameUnit.prototype.defaultAction = function () {
-        console.log("默认行为");
-    };
     return MoveableGameUnit;
 }(LifeGameUnit));
 __reflect(MoveableGameUnit.prototype, "MoveableGameUnit", ["IMoveable"]);

@@ -9,9 +9,4 @@ class MoveableGameUnit extends LifeGameUnit implements IMoveable{
     public constructor(id:number, rid:number){
         super(id, rid);
     }
-
-    /*默认行为*/
-    public defaultAction():void{
-        console.log("默认行为");
-    }
 }

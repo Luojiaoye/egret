@@ -22,6 +22,10 @@ var LifeGameUnit = (function (_super) {
         _this.sp = 0;
         return _this;
     }
+    /*默认行为*/
+    LifeGameUnit.prototype.defaultAction = function () {
+        console.log("默认行为");
+    };
     return LifeGameUnit;
 }(GameUnitBase));
 __reflect(LifeGameUnit.prototype, "LifeGameUnit", ["ILife"]);

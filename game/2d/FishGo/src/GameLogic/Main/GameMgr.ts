@@ -17,7 +17,8 @@ class GameMgr
 
     // 心跳包
     private beat(evt:egret.TimerEvent):void{
-        TestVersionMgr.inst.update();
+        MoveMgr.inst.update();
+        PlayerMgr.inst.update();
     }
 
     private static _inst:GameMgr = null;
@@ -30,8 +31,6 @@ class GameMgr
 
     /* 开始游戏 */
     public start():void{
-        console.log("开始游戏");
-
         ResourceMgr.inst.initialize();  // 初始化资源管理器
 
         // 加载必须加载的资源

@@ -7,11 +7,12 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 };
 var PlayerMgr = (function () {
     function PlayerMgr() {
+        this._players = null;
         this.init();
     }
     // 初始化方法
     PlayerMgr.prototype.init = function () {
-        // this._players = {};
+        this._players = new Array();
     };
     Object.defineProperty(PlayerMgr, "inst", {
         /* 提供单例对象PlayerMgr */
@@ -24,6 +25,18 @@ var PlayerMgr = (function () {
         configurable: true
     });
     /*
+    * 更新*/
+    PlayerMgr.prototype.update = function () {
+        var player = null;
+        for (var _i = 0, _a = this._players; _i < _a.length; _i++) {
+            var id = _a[_i];
+            player = this.getPlayer(id);
+            if (!player)
+                continue;
+            player.update();
+        }
+    };
+    /*
      *创建一个玩家
      *@param id 玩家模板id
      *@param gid 玩家全局唯一id
@@ -33,6 +46,7 @@ var PlayerMgr = (function () {
         if (!player) {
             var rid = GUID.build(); // 客户端维护的渲染id
             player = new Player(id, gid, rid);
+            this._players.push(gid);
             GameUnitMgr.inst.addGameUnit(player);
             var playerData = PlayerDataMgr.inst.getPlayerData(gid);
             RenderMgr.inst.createDragonBoneRenderObject(rid, playerData.avatar, gid);
@@ -48,6 +62,7 @@ var PlayerMgr = (function () {
         if (!player) {
             var rid = GUID.build(); // 客户端维护的渲染id
             player = new Player(data.id, data.templateId, rid);
+            this._players.push(data.id);
             GameUnitMgr.inst.addGameUnit(player);
             RenderMgr.inst.createDragonBoneRenderObject(rid, data.avatar, data.id);
         }
@@ -62,6 +77,8 @@ var PlayerMgr = (function () {
             RenderMgr.inst.removeRenderObject(player.renderObjId); // 移除渲染对象
             GameUnitMgr.inst.removeGameUnitById(gid); // 移除对象
             PlayerDataMgr.inst.removePlayerData(gid); // 移除玩家数据
+            if (this._players.indexOf(gid) > -1)
+                this._players.slice(this._players.indexOf(gid), 1);
         }
     };
     /*获取玩家

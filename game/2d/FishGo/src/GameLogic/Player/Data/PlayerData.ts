@@ -10,6 +10,9 @@ class PlayerData{
     /*玩家名字*/
     public name:String;
 
+    // 动作动画 [用于测试]
+    public actionAni:ActionAni;
+
     /*外显id [优化点：外显表配置]*/
     public avatar:string;   // 暂时直接去avatar路径
 
@@ -62,4 +65,24 @@ class PlayerData{
     public get lv(): number {
         return this._lv;
     }
+}
+
+class ActionAni{
+    // 出生
+    public born:string = "born";
+    // 站立
+    public stand:string = "stand";
+    // 行走
+    public walk:string = "walk";
+    // 普通攻击
+    public attack:string = "attack";
+    // 受击
+    public damage:string = "defense";
+    // 死亡
+    public death:string = "death";
+
+    // 技能攻击
+    public skill:string = "skill";
+    // 大招攻击
+    public unique:string = "unique";
 }

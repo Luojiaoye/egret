@@ -17,18 +17,23 @@ var DragonBoneRenderObject = (function (_super) {
         _this._armatureDisplay = null; // 龙骨显示对象
         return _this;
     }
-    Object.defineProperty(DragonBoneRenderObject.prototype, "armatureDisplay", {
-        /*龙骨显示对象*/
+    Object.defineProperty(DragonBoneRenderObject.prototype, "display", {
+        /*显示对象*/
         get: function () {
             return this._armatureDisplay;
         },
-        /*龙骨显示对象*/
+        /*显示对象*/
         set: function (value) {
             this._armatureDisplay = value;
         },
         enumerable: true,
         configurable: true
     });
+    /*渲染*/
+    DragonBoneRenderObject.prototype.render = function () {
+        // 添加到舞台
+        LayerMgr.inst.sceneLayer.addChild(this.display);
+    };
     /* 销毁渲染对象
      * @param dispose 是否释放内存
      */

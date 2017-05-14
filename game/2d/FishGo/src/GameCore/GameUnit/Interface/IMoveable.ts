@@ -5,7 +5,4 @@
 interface IMoveable{
     /*移动速度*/
     speed:number;
-
-    /*默认行为*/
-    defaultAction():void;
 }

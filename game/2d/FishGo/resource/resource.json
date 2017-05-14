@@ -9,6 +9,10 @@
 			"name":"2_player"
 		},
 		{
+			"keys":"3_player_ske_json,3_player_tex_json,3_player_tex_png",
+			"name":"3_player"
+		},
+		{
 			"keys":"1_tmx",
 			"name":"1_map"
 		},
@@ -64,6 +68,21 @@
 			"name":"2_player_tex_json",
 			"type":"json",
 			"url":"assets/dragonBone/2_player_tex.json"
+		},
+		{
+			"name":"3_player_tex_png",
+			"type":"image",
+			"url":"assets/dragonBone/3_player_tex.png"
+		},
+		{
+			"name":"3_player_ske_json",
+			"type":"json",
+			"url":"assets/dragonBone/3_player_ske.json"
+		},
+		{
+			"name":"3_player_tex_json",
+			"type":"json",
+			"url":"assets/dragonBone/3_player_tex.json"
 		},
 		{
 			"name":"1_jpg",

@@ -10,9 +10,9 @@ var GameUnitBase = (function () {
         this._gameUnitId = 0; // 游戏对象id
         this._renderObjId = 0; // 渲染对象id
         /*x坐标*/
-        this.x = 0;
+        this._x = 0;
         /*y坐标*/
-        this.y = 0;
+        this._y = 0;
         /*层深*/
         this.z = 0;
         this._gameUnitId = id;
@@ -30,6 +30,36 @@ var GameUnitBase = (function () {
         /*渲染对象id*/
         get: function () {
             return this._renderObjId;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameUnitBase.prototype, "x", {
+        /*x坐标*/
+        get: function () {
+            return this._x;
+        },
+        /*x坐标*/
+        set: function (value) {
+            this._x = value;
+            var renderObj = RenderMgr.inst.getRenderObject(this._renderObjId);
+            if (renderObj)
+                renderObj.x = this._x;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameUnitBase.prototype, "y", {
+        /*y坐标*/
+        get: function () {
+            return this._y;
+        },
+        /*y坐标*/
+        set: function (value) {
+            this._y = value;
+            var renderObj = RenderMgr.inst.getRenderObject(this._renderObjId);
+            if (renderObj)
+                renderObj.y = this._y;
         },
         enumerable: true,
         configurable: true

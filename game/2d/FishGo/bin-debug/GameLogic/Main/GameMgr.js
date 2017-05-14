@@ -17,7 +17,8 @@ var GameMgr = (function () {
     };
     // 心跳包
     GameMgr.prototype.beat = function (evt) {
-        TestVersionMgr.inst.update();
+        MoveMgr.inst.update();
+        PlayerMgr.inst.update();
     };
     Object.defineProperty(GameMgr, "inst", {
         get: function () {
@@ -30,7 +31,6 @@ var GameMgr = (function () {
     });
     /* 开始游戏 */
     GameMgr.prototype.start = function () {
-        console.log("开始游戏");
         ResourceMgr.inst.initialize(); // 初始化资源管理器
         // 加载必须加载的资源
         // ResourceMgr.inst.loadGroup("main_ui", this.onResourceLoadComplete, this);

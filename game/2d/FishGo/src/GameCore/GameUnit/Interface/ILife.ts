@@ -9,4 +9,7 @@ interface ILife{
     mp:number;
     /*体力值*/
     sp:number;
+
+    // 默认的行为
+    defaultAction():void;
 }

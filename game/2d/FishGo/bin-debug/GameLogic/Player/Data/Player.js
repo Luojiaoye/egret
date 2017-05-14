@@ -16,14 +16,14 @@ var Player = (function (_super) {
         var _this = _super.call(this, gid, rid) || this;
         // 玩家id
         _this._id = 0;
-        // x速度
-        _this.speedX = 0;
-        // y速度
-        _this.speedY = 0;
-        // 使用技能中
-        _this._useCD = false;
+        // 行为状态
+        _this._actionStatus = ActionType.INVALID;
+        // 移动数据
+        _this._moveData = null;
         // 化身
         _this._avatar = null;
+        // 方向
+        _this._dir = 0;
         _this._id = id;
         return _this;
     }
@@ -37,68 +37,58 @@ var Player = (function (_super) {
     });
     /*覆盖父类的默认行为*/
     Player.prototype.defaultAction = function () {
-        console.log("玩家：" + this._id);
+        this.avatar.display.scaleX = 0.5;
+        this.avatar.display.scaleY = 0.5; // 测试代码
         this.born(this.x, this.y); // 配置或者服务器的出生点
     };
     /*出生*/
     Player.prototype.born = function (x, y) {
         this.x = x;
         this.y = y;
-        console.log("玩家出生");
         if (this.avatar) {
-            this.avatar.armatureDisplay.x = this.x;
-            this.avatar.armatureDisplay.y = this.y;
-            var aniName = this._id == 2 ? "Move" : "steady";
-            this.playAnimation(aniName, 0);
+            this.avatar.display.x = this.x;
+            this.avatar.display.y = this.y;
+            this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.born, 0);
         }
+        this._moveData = MoveMgr.inst.createMoveData(this);
+        this._actionStatus = ActionType.BORN;
     };
     /*站立*/
     Player.prototype.stand = function () {
-        if (this._useCD)
+        if (this._actionStatus == ActionType.SKILL)
             return;
-        console.log("玩家站立");
-        var aniName = this._id == 2 ? "Move" : "steady";
-        this.playAnimation(aniName, 0);
+        this._actionStatus = ActionType.STAND;
+        this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.stand, 0);
     };
     /*行走*/
     Player.prototype.walk = function () {
-        if (this._useCD)
+        if (this._actionStatus == ActionType.SKILL)
             return;
-        var aniName = this._id == 2 ? "Move" : "steady2";
-        this.playAnimation(aniName, 0);
-        if (this.avatar) {
-            this.avatar.armatureDisplay.scaleX = this.speedX < 0 ? -0.5 : 0.5;
-            var destX = this.avatar.armatureDisplay.x + this.speedX * this.speed * this.sp;
-            var destY = this.avatar.armatureDisplay.y + this.speedY * this.speed * this.sp;
-            if (MapMgr.inst.destVerfy(destX, destY)) {
-                this.avatar.armatureDisplay.x = destX;
-                this.avatar.armatureDisplay.y = destY;
-            }
-        }
+        this._actionStatus = ActionType.WALK;
+        this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.walk, 0);
     };
     /*使用技能*/
     Player.prototype.useSkill = function (skillId) {
-        this._useCD = true;
-        var animations = ["steady", "attack1", "attack1_+1", "attack2"];
+        this._actionStatus = ActionType.SKILL;
+        var animations = ["", PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.attack, PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.skill, PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.unique];
         this.playAnimation(animations[skillId]);
     };
     // 播放动画
     Player.prototype.playAnimation = function (aniName, playTimes) {
         if (playTimes === void 0) { playTimes = 1; }
         if (this.avatar) {
-            var state = this.avatar.armatureDisplay.animation.getState(aniName);
+            this.avatar.display.scaleX = this._dir < 0 ? -0.5 : 0.5;
+            var state = this.avatar.display.animation.getState(aniName);
             if (!state || state && !state.isPlaying) {
-                this.avatar.armatureDisplay.animation.play(aniName, playTimes);
-                console.log("动画名称： " + aniName + " 播放次数： " + playTimes);
+                this.avatar.display.animation.play(aniName, playTimes);
             }
-            if (!this.avatar.armatureDisplay.armature.hasEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE)) {
-                this.avatar.armatureDisplay.armature.addEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE, this.playComplete, this);
+            if (!this.avatar.display.armature.hasEventListener(dragonBones.AnimationEvent.COMPLETE)) {
+                this.avatar.display.armature.addEventListener(dragonBones.AnimationEvent.COMPLETE, this.playComplete, this);
             }
         }
     };
     Player.prototype.playComplete = function (evt) {
-        console.log("播放完动画：");
-        this._useCD = false;
+        this._actionStatus = ActionType.STAND;
     };
     Object.defineProperty(Player.prototype, "avatar", {
         get: function () {
@@ -113,7 +103,40 @@ var Player = (function (_super) {
     Player.prototype.isHero = function () {
         return this.gameUnitId == PlayerDataMgr.inst.getHeroData().id;
     };
+    Player.prototype.update = function () {
+        if (!this.isHero())
+            return;
+        var xAxis = InputMgr.inst.getAxisX();
+        var yAxis = InputMgr.inst.getAxisY();
+        if (this._moveData) {
+            this._moveData.axisX = xAxis;
+            this._moveData.axisY = yAxis;
+            this._dir = xAxis == 0 ? this._dir : xAxis;
+            this._moveData.speed = this.speed * InputMgr.inst.getTorque();
+        }
+        // [需要 优化为ActionMgr中去]
+        if (yAxis != 0 || xAxis != 0)
+            this.walk();
+        else
+            this.stand();
+    };
     return Player;
 }(MoveableGameUnit));
 __reflect(Player.prototype, "Player");
+var ActionType = (function () {
+    function ActionType() {
+    }
+    return ActionType;
+}());
+/*无效动作*/
+ActionType.INVALID = -1;
+/*出生动作*/
+ActionType.BORN = 0;
+/*站立动作*/
+ActionType.STAND = 1;
+/*行走动作*/
+ActionType.WALK = 2;
+/*技能动作*/
+ActionType.SKILL = 3;
+__reflect(ActionType.prototype, "ActionType");
 //# sourceMappingURL=Player.js.map

@@ -28,10 +28,30 @@ var TestVersionMgr = (function () {
         });
         // 初始化输入管理器
         InputMgr.inst.initialize(InputMgr.JOYSTICK_INPUT); // 摇杆输入
+        // 初始化摄像机
+        var camer = CameraMgr.inst.createCamera(Camera.TYPE_DEFAULT, 1280, 960);
+        camer.focusWidth = 320;
+        camer.focusHeight = 240;
         // 初始化一份玩家数据
         var playerData = new PlayerData();
         playerData.id = 1001;
-        playerData.templateId = 1;
+        playerData.templateId = 3;
+        var ani = new ActionAni();
+        // ani.unique = "attack1_+1";
+        // ani.skill = "attack1";
+        // ani.attack = "attack";
+        // ani.stand = "steady";
+        // ani.born = "steady";
+        // ani.walk = "steady2";
+        ani.unique = "uniqueAttack";
+        ani.skill = "skillAttack1";
+        ani.attack = "normalAttack";
+        ani.stand = "win";
+        ani.born = "win";
+        ani.walk = "run";
+        ani.death = "death";
+        ani.damage = "hit";
+        playerData.actionAni = ani;
         playerData.name = "测试名字";
         playerData.avatar = playerData.templateId + "_player";
         playerData.attack = 1000;
@@ -43,7 +63,8 @@ var TestVersionMgr = (function () {
         // 添加玩家数据
         PlayerDataMgr.inst.addPlayerData(playerData, true); // 英雄玩家
         // 创建一个玩家
-        PlayerMgr.inst.createPlayer(playerData.templateId, playerData.id);
+        var player = PlayerMgr.inst.createPlayer(playerData.templateId, playerData.id);
+        CameraMgr.inst.setTarget(player);
         ResourceMgr.inst.loadGroup("home_ui", function () {
             // 进入场景
             SceneMgr.inst.enter(6);
@@ -59,21 +80,6 @@ var TestVersionMgr = (function () {
         /*let player1:Player = PlayerMgr.inst.getPlayer(1002);   // 获取一个玩家
         if(player1)
             player1.born(300, 500);*/
-    };
-    TestVersionMgr.prototype.update = function () {
-        var xAxis = InputMgr.inst.getAxisX();
-        var yAxis = InputMgr.inst.getAxisY();
-        if (!this._hero)
-            return;
-        if (yAxis != 0 || xAxis != 0) {
-            this._hero.speedX = xAxis;
-            this._hero.speedY = yAxis;
-            this._hero.sp = InputMgr.inst.getTorque();
-            this._hero.walk();
-        }
-        else {
-            this._hero.stand();
-        }
     };
     return TestVersionMgr;
 }());

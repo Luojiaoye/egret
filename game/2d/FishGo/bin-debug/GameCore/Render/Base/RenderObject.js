@@ -31,10 +31,13 @@ var RenderObject = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(RenderObject.prototype, "displayObj", {
+    Object.defineProperty(RenderObject.prototype, "display", {
         /*显示对象*/
         get: function () {
             return this._displayObj;
+        },
+        set: function (value) {
+            this._displayObj = value;
         },
         enumerable: true,
         configurable: true
@@ -47,6 +50,10 @@ var RenderObject = (function () {
     RenderObject.prototype.initialize = function (id, displayObj) {
         this._id = id;
         this._displayObj = displayObj;
+    };
+    /*渲染*/
+    RenderObject.prototype.render = function () {
+        LayerMgr.inst.sceneLayer.addChild(this.display);
     };
     /* 销毁渲染对象
      * @param dispose 是否释放内存
@@ -62,7 +69,29 @@ var RenderObject = (function () {
                 this._displayObj["dispose"].apply(this._displayObj, true);
         }
     };
+    Object.defineProperty(RenderObject.prototype, "x", {
+        get: function () {
+            return this._x;
+        },
+        set: function (value) {
+            this._x = value;
+            this.display.x = this._x;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RenderObject.prototype, "y", {
+        get: function () {
+            return this._y;
+        },
+        set: function (value) {
+            this._y = value;
+            this.display.y = this._y;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return RenderObject;
 }());
-__reflect(RenderObject.prototype, "RenderObject");
+__reflect(RenderObject.prototype, "RenderObject", ["IRender"]);
 //# sourceMappingURL=RenderObject.js.map

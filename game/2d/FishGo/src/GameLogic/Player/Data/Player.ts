@@ -5,15 +5,14 @@
 class Player extends MoveableGameUnit{
     // 玩家id
     private _id:number = 0;
-    // x速度
-    public speedX:number = 0;
-    // y速度
-    public speedY:number = 0;
-    // 使用技能中
-    private _useCD:boolean = false;
-
+    // 行为状态
+    private _actionStatus:number = ActionType.INVALID;
+    // 移动数据
+    private _moveData:MoveData = null;
     // 化身
     private _avatar:DragonBoneRenderObject = null;
+    // 方向
+    private _dir:number = 0;
 
     public constructor(id:number, gid:number, rid:number){
         super(gid, rid);
@@ -27,7 +26,9 @@ class Player extends MoveableGameUnit{
 
     /*覆盖父类的默认行为*/
     public defaultAction(): void {
-        console.log("玩家：" + this._id);
+        this.avatar.display.scaleX = 0.5;
+        this.avatar.display.scaleY = 0.5;   // 测试代码
+
         this.born(this.x, this.y);    // 配置或者服务器的出生点
     }
 
@@ -35,69 +36,59 @@ class Player extends MoveableGameUnit{
     public born(x:number, y:number):void{
         this.x = x;
         this.y = y;
-        console.log("玩家出生");
         if(this.avatar){
-            this.avatar.armatureDisplay.x = this.x;
-            this.avatar.armatureDisplay.y = this.y;
-            let aniName:string = this._id == 2 ? "Move" : "steady";
-            this.playAnimation(aniName, 0);
+            this.avatar.display.x = this.x;
+            this.avatar.display.y = this.y;
+            this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.born, 0);
         }
+
+        this._moveData = MoveMgr.inst.createMoveData<Player>(this);
+
+        this._actionStatus = ActionType.BORN;
     }
 
     /*站立*/
     public stand():void{
-        if(this._useCD)
+        if(this._actionStatus == ActionType.SKILL)
             return;
 
-        console.log("玩家站立");
-        let aniName:string = this._id == 2 ? "Move" : "steady";
-        this.playAnimation(aniName, 0);
+        this._actionStatus = ActionType.STAND;
+        this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.stand, 0);
     }
 
     /*行走*/
     public walk():void{
-        if(this._useCD)
+        if(this._actionStatus == ActionType.SKILL)
             return;
 
-        let aniName:string = this._id == 2 ? "Move" : "steady2";
-        this.playAnimation(aniName, 0);
-        if(this.avatar){
-            this.avatar.armatureDisplay.scaleX = this.speedX < 0 ? -0.5 : 0.5;
-
-            let destX:number = this.avatar.armatureDisplay.x + this.speedX * this.speed * this.sp;
-            let destY:number = this.avatar.armatureDisplay.y + this.speedY * this.speed * this.sp;
-            if(MapMgr.inst.destVerfy(destX, destY)){
-                this.avatar.armatureDisplay.x =　destX;
-                this.avatar.armatureDisplay.y = destY;
-            }
-        }
+        this._actionStatus = ActionType.WALK;
+        this.playAnimation(PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.walk, 0);
     }
 
     /*使用技能*/
     public useSkill(skillId:number):void{
-        this._useCD = true;
-        let animations:string[] = ["steady", "attack1", "attack1_+1", "attack2"];
+        this._actionStatus = ActionType.SKILL;
+        let animations:string[] = ["",PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.attack, PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.skill, PlayerDataMgr.inst.getPlayerData(this.gameUnitId).actionAni.unique];
         this.playAnimation(animations[skillId]);
     }
 
     // 播放动画
     private playAnimation(aniName:string, playTimes:number = 1):void{
         if(this.avatar){
-            let state:dragonBones.AnimationState = this.avatar.armatureDisplay.animation.getState(aniName);
+            this.avatar.display.scaleX = this._dir < 0 ? -0.5 : 0.5;
+            let state:dragonBones.AnimationState = this.avatar.display.animation.getState(aniName);
             if(!state || state && !state.isPlaying){
-                this.avatar.armatureDisplay.animation.play(aniName, playTimes);
-                console.log("动画名称： " + aniName + " 播放次数： " + playTimes);
+                this.avatar.display.animation.play(aniName, playTimes);
             }
 
-            if(!this.avatar.armatureDisplay.armature.hasEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE)){
-                this.avatar.armatureDisplay.armature.addEventListener(dragonBones.AnimationEvent.LOOP_COMPLETE, this.playComplete, this);
+            if(!this.avatar.display.armature.hasEventListener(dragonBones.AnimationEvent.COMPLETE)){
+                this.avatar.display.armature.addEventListener(dragonBones.AnimationEvent.COMPLETE, this.playComplete, this);
             }
         }
     }
 
     private playComplete(evt:dragonBones.ArmatureEvent):void{
-        console.log("播放完动画：");
-        this._useCD = false;
+        this._actionStatus = ActionType.STAND;
     }
 
     get avatar():DragonBoneRenderObject{
@@ -111,4 +102,37 @@ class Player extends MoveableGameUnit{
     public isHero():Boolean{
         return this.gameUnitId == PlayerDataMgr.inst.getHeroData().id;
     }
+
+    public update():void{
+        if(!this.isHero())
+            return;
+
+        let xAxis:number = InputMgr.inst.getAxisX();
+        let yAxis:number = InputMgr.inst.getAxisY();
+        if(this._moveData){
+            this._moveData.axisX = xAxis;
+            this._moveData.axisY = yAxis;
+            this._dir = xAxis == 0 ? this._dir: xAxis;
+            this._moveData.speed = this.speed * InputMgr.inst.getTorque();
+        }
+
+        // [需要 优化为ActionMgr中去]
+        if(yAxis != 0 || xAxis != 0)
+            this.walk();
+        else
+            this.stand()
+    }
+}
+
+class ActionType{
+    /*无效动作*/
+    public static INVALID:number = -1;
+    /*出生动作*/
+    public static BORN:number = 0;
+    /*站立动作*/
+    public static STAND:number = 1;
+    /*行走动作*/
+    public static WALK:number =  2;
+    /*技能动作*/
+    public static SKILL:number = 3;
 }

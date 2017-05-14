@@ -18,13 +18,18 @@ var SceneMgr = (function () {
      * @param id 场景id
      * */
     SceneMgr.prototype.enter = function (id) {
-        console.log("enter scene");
         if (this.verify(id)) {
             this._currentSceneId = id;
             // 处理场景的逻辑写在这里
             // 显示场景ui
             this.sceneUI();
-            MapMgr.inst.render(6);
+            var rid = GUID.build();
+            var mapId = 6;
+            var map = new TiledMap(mapId, 32, 32);
+            RenderMgr.inst.createMapRenderObject(rid, map.id);
+            map.renderObjId = rid;
+            map.initialize();
+            MapMgr.inst.addMap(map);
         }
     };
     // 场景ui
