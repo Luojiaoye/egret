@@ -21,18 +21,48 @@
       <file leaf-file-name="MoveMgr.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/MoveMgr/MoveMgr.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-624">
-              <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="836">
+              <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestVersionMgr.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestVersionMgr.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameLogic/Main/TestVersionMgr.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+            <state relative-caret-position="266">
+              <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="egretProperties.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/egretProperties.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="750">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerHeadInfoView.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GameView/Home/PlayerHeadInfoView.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerHeadInfoView.exml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resource/assets/ui/PlayerHeadInfoView.exml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -41,7 +71,7 @@
       <file leaf-file-name="CameraMgr.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/Camera/CameraMgr.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="380">
               <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
               <folding />
             </state>
@@ -51,18 +81,8 @@
       <file leaf-file-name="Camera.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/Camera/Base/Camera.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapMgr.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameCore/Map/MapMgr.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="266">
+              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -71,7 +91,7 @@
       <file leaf-file-name="Map.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Base/Map.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="228">
               <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
@@ -81,7 +101,7 @@
       <file leaf-file-name="TiledMap.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Base/TiledMap.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="456">
               <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
               <folding />
             </state>
@@ -91,28 +111,8 @@
       <file leaf-file-name="IMap.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Interface/IMap.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="342">
               <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RenderMgr.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameCore/Render/RenderMgr.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapRenderObject.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameCore/Render/Base/MapRenderObject.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="841">
-              <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -226,8 +226,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -284,7 +284,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GameCore" />
+              <option name="myItemId" value="GameView" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,11 +302,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GameCore" />
+              <option name="myItemId" value="GameView" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Camera" />
+              <option name="myItemId" value="Home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -320,36 +320,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FishGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FishGo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GameCore" />
+              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Camera" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Base" />
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FishGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FishGo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/egret_back/egret/game/2d/warcraft/proj.egret" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
     <property name="nodejs_interpreter_path" value="D:/nodeJS/node" />
     <property name="typescript-compiler-editor-notification" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Tes&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/TestVersionMgr.ts&#10;Map&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/Map/MapMgr.ts&#10;Rend&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/Render/RenderMgr.ts&#10;Test&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/TestVersionMgr.ts&#10;Dra&#9;null&#9;null&#10;MOveM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/MoveMgr.ts&#10;MoveD&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/Base/MoveData.ts&#10;GameM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/GameMgr.ts&#10;Play&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerMgr.ts&#10;MOve&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/MoveMgr.ts&#10;Game&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/GameMgr.ts&#10;PlayerD&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerDataMgr.ts&#10;PlayerM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerMgr.ts&#10;PlayerData&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/Data/PlayerData.ts&#10;Player&#9;null&#9;null&#10;Sce&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;res&#9;FILE&#9;file://F:/egret/game/2d/FishGo/resource/resource.json&#10;Scene&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;GameC&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Main/GameConfig.ts&#10;Gamecon&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Main/GameConfig.ts&#10;ren&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameCore/Render/RenderMgr.ts&#10;resource&#9;FILE&#9;file://F:/egret/game/2d/FishGo/resource/resource.json&#10;SceneM&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;ThemeM&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Theme/ThemeMgr.ts&#10;Pla&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Player/Data/Player.ts&#10;scene&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;Group&#9;null&#9;null&#10;sce&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;REsou&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameCore/Resource/ResourceMgr.ts&#10;sceneMgr&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;SceneMgr&#9;FILE&#9;file://F:/egret/game/2d/FishGo/bin-debug/GameLogic/Scene/SceneMgr.js" />
+    <property name="SearchEverywhereHistoryKey" value="egretP&#9;FILE&#9;file://F:/egret/game/2d/FishGo/egretProperties.json&#10;Tes&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/TestVersionMgr.ts&#10;Map&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/Map/MapMgr.ts&#10;Rend&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/Render/RenderMgr.ts&#10;Test&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/TestVersionMgr.ts&#10;Dra&#9;null&#9;null&#10;MOveM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/MoveMgr.ts&#10;MoveD&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/Base/MoveData.ts&#10;GameM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/GameMgr.ts&#10;Play&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerMgr.ts&#10;MOve&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameCore/MoveMgr/MoveMgr.ts&#10;Game&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Main/GameMgr.ts&#10;PlayerD&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerDataMgr.ts&#10;PlayerM&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/PlayerMgr.ts&#10;PlayerData&#9;FILE&#9;file://E:/egret/egret/game/2d/FishGo/src/GameLogic/Player/Data/PlayerData.ts&#10;Player&#9;null&#9;null&#10;Sce&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;res&#9;FILE&#9;file://F:/egret/game/2d/FishGo/resource/resource.json&#10;Scene&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;GameC&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Main/GameConfig.ts&#10;Gamecon&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Main/GameConfig.ts&#10;ren&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameCore/Render/RenderMgr.ts&#10;resource&#9;FILE&#9;file://F:/egret/game/2d/FishGo/resource/resource.json&#10;SceneM&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;ThemeM&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Theme/ThemeMgr.ts&#10;Pla&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Player/Data/Player.ts&#10;scene&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;Group&#9;null&#9;null&#10;sce&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;REsou&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameCore/Resource/ResourceMgr.ts&#10;sceneMgr&#9;FILE&#9;file://F:/egret/game/2d/FishGo/src/GameLogic/Scene/SceneMgr.ts&#10;SceneMgr&#9;FILE&#9;file://F:/egret/game/2d/FishGo/bin-debug/GameLogic/Scene/SceneMgr.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -446,7 +474,7 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration default="false" name="egret_run" type="JavascriptDebugType" factoryName="JavaScript Debug" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/FishGo/index.html">
+    <configuration default="false" name="egret_run" type="JavascriptDebugType" factoryName="JavaScript Debug" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63343/FishGo/index.html">
       <method>
         <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_egret_build" />
       </method>
@@ -481,11 +509,12 @@
       <workItem from="1494646022908" duration="21868000" />
       <workItem from="1494672321276" duration="6464000" />
       <workItem from="1494727385691" duration="22020000" />
+      <workItem from="1494833957297" duration="1090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201662000" />
+    <option name="totallyTimeSpent" value="202752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,17 +526,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2470238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24657534" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3300866" sideWeight="0.6459431" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24451411" sideWeight="0.3540569" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24350649" sideWeight="0.3540569" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.47260273" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.47260273" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.46838778" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -550,13 +579,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameView/Home/MainWindow.ts" />
     <entry file="file://$PROJECT_DIR$/src/GameView/Skill/SkillOperationWindow.ts" />
-    <entry file="file://$PROJECT_DIR$/resource/assets/ui/PlayerHeadInfoView.exml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameView/WindowEnum.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -599,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameView/Home/PlayerHeadInfoView.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/modules/dragonBones/dragonBones.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -634,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/egretProperties.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/resource.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3400">
@@ -666,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -727,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="14335" column="17" lean-forward="false" selection-start-line="14335" selection-start-column="17" selection-end-line="14335" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
           <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="490" column="10" lean-forward="false" selection-start-line="490" selection-start-column="10" selection-end-line="490" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="113" column="41" lean-forward="false" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,7 +824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Map/MapMgr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="304">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
@@ -836,7 +832,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Render/RenderMgr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="494">
           <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding />
         </state>
@@ -844,7 +840,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Render/Base/MapRenderObject.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
+        <state relative-caret-position="551">
           <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding />
         </state>
@@ -852,7 +848,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Interface/IMap.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="342">
           <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
@@ -860,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Base/Map.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="228">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
@@ -868,7 +864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Map/Base/TiledMap.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="456">
           <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
           <folding />
         </state>
@@ -876,15 +872,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Camera/Base/Camera.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="266">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/Camera/CameraMgr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="380">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
@@ -892,16 +888,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCore/MoveMgr/MoveMgr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624">
-          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="836">
+          <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLogic/Main/TestVersionMgr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        <state relative-caret-position="266">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egretProperties.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/assets/ui/PlayerHeadInfoView.exml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameView/Home/PlayerHeadInfoView.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding />
         </state>
       </provider>

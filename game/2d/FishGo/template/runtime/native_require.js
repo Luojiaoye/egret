@@ -33,7 +33,7 @@ var game_file_list = [
 	"bin-debug/GameCore/Render/RenderMgr.js",
 	"bin-debug/GameCore/Render/RenderType.js",
 	"bin-debug/GameCore/Resource/ResourceMgr.js",
-	"bin-debug/GameCore/Camera/CameraMgr.js",
+	"bin-debug/GameView/WindowEnum.js",
 	"bin-debug/GameCore/GameUnit/GameUnitMgr.js",
 	"bin-debug/GameCore/Window/Interface/IWindow.js",
 	"bin-debug/GameCore/Window/WindowMgr.js",
@@ -55,7 +55,7 @@ var game_file_list = [
 	"bin-debug/GameLogic/Theme/ThemeMgr.js",
 	"bin-debug/GameView/Home/PlayerHeadInfoView.js",
 	"bin-debug/GameView/Skill/SkillOperationView.js",
-	"bin-debug/GameView/WindowEnum.js",
+	"bin-debug/GameCore/Camera/CameraMgr.js",
 	//----auto game_file_list end----
 ];
 
