@@ -1,0 +1,33 @@
+{
+  "autoGenerateExmlsList": true,
+  "exmls": [
+    "resource/assets/theme/ButtonSkin.exml",
+    "resource/assets/theme/CheckBoxSkin.exml",
+    "resource/assets/theme/HScrollBarSkin.exml",
+    "resource/assets/theme/HSliderSkin.exml",
+    "resource/assets/theme/ItemRendererSkin.exml",
+    "resource/assets/theme/PanelSkin.exml",
+    "resource/assets/theme/ProgressBarSkin.exml",
+    "resource/assets/theme/RadioButtonSkin.exml",
+    "resource/assets/theme/ScrollerSkin.exml",
+    "resource/assets/theme/TextInputSkin.exml",
+    "resource/assets/theme/ToggleSwitchSkin.exml",
+    "resource/assets/theme/VScrollBarSkin.exml",
+    "resource/assets/theme/VSliderSkin.exml"
+  ],
+  "skins": {
+    "eui.Button": "resource/assets/theme/ButtonSkin.exml",
+    "eui.CheckBox": "resource/assets/theme/CheckBoxSkin.exml",
+    "eui.HScrollBar": "resource/assets/theme/HScrollBarSkin.exml",
+    "eui.HSlider": "resource/assets/theme/HSliderSkin.exml",
+    "eui.ItemRenderer": "resource/assets/theme/ItemRendererSkin.exml",
+    "eui.Panel": "resource/assets/theme/PanelSkin.exml",
+    "eui.ProgressBar": "resource/assets/theme/ProgressBarSkin.exml",
+    "eui.RadioButton": "resource/assets/theme/RadioButtonSkin.exml",
+    "eui.Scroller": "resource/assets/theme/ScrollerSkin.exml",
+    "eui.TextInput": "resource/assets/theme/TextInputSkin.exml",
+    "eui.ToggleSwitch": "resource/assets/theme/ToggleSwitchSkin.exml",
+    "eui.VScrollBar": "resource/assets/theme/VScrollBarSkin.exml",
+    "eui.VSlider": "resource/assets/theme/VSliderSkin.exml"
+  }
+}

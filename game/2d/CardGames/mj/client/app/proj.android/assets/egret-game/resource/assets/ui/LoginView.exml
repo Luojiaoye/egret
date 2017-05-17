@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.LoginView" width="1136" height="640" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="loginbg_jpg" x="0" y="0"/>
+	<e:Image source="logo1_png" x="213.5" y="117.5"/>
+	<e:CheckBox x="441" y="478"/>
+	<e:Image source="xieyibg_png" x="465" y="477" scale9Grid="123,68,739,412" width="180" height="25"/>
+	<e:Image source="wenzi_png" x="475" y="478"/>
+	<e:Image id="btnLogin" x="400" y="500" source="button_weixinlogon_png"/>
+	<!--<e:Button id="btnLogin" x="400" y="500">
+		<e:skinName>
+			<e:Skin states="up,down">
+			<e:Image width="100%" height="100%" source="button_weixinlogon_png" source.down=""/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>-->
+
+</e:Skin>

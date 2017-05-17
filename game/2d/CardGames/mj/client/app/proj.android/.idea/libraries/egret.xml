@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="egret">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/egret.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

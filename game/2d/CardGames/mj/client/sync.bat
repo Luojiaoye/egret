@@ -1,0 +1,1 @@
+egret build proj.egret --runtime native -e
