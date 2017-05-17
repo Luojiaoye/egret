@@ -18,7 +18,9 @@ var SocketMgr = (function () {
     };
     SocketMgr.prototype.onConnect = function (event) {
         trace("连接成功");
+        var cmd = "well done!";
         // 链接成功的处理逻辑
+        this._socket.writeUTF(cmd);
     };
     // 接收协议
     SocketMgr.prototype.onReceiveMessage = function (e) {

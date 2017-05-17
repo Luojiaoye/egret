@@ -19,8 +19,9 @@ class SocketMgr{
 
     private onConnect(event:egret.Event):void {
         trace("连接成功");
-
+        let cmd:string = "well done!";
         // 链接成功的处理逻辑
+        this._socket.writeUTF(cmd);
     }
 
     // 接收协议

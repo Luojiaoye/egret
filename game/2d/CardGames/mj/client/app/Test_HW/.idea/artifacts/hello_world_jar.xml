@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hello_world:jar">
+    <output-path>E:/IdeaWorkspace/out</output-path>
+    <root id="archive" name="hello_world.jar">
+      <element id="module-output" name="hello_world" />
+    </root>
+  </artifact>
+</component>

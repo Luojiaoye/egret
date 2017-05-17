@@ -10,15 +10,17 @@ var game_file_list = [
 	"libs/modules/eui/eui.js",
 	"libs/modules/socket/socket.js",
 	"bin-debug/game_core/Window/Base/WindowBase.js",
-	"bin-debug/GameEntry.js",
+	"bin-debug/game_logic/Player/PlayerMgr.js",
 	"bin-debug/game_core/Layer/LayerMgr.js",
 	"bin-debug/game_core/Window/Interface/IWindow.js",
 	"bin-debug/game_core/Window/WindowMgr.js",
 	"bin-debug/game_logic/Card/CardMgr.js",
 	"bin-debug/game_logic/Main/GameMgr.js",
 	"bin-debug/game_logic/Main/TestVersionMgr.js",
+	"bin-debug/game_logic/Net/Data/ProtocalEnum.js",
+	"bin-debug/game_logic/Net/Data/SubProtocalEnum.js",
 	"bin-debug/game_logic/Net/SocketMgr.js",
-	"bin-debug/game_logic/Player/PlayerMgr.js",
+	"bin-debug/game_core/Resource/ResourceMgr.js",
 	"bin-debug/game_logic/Player/Unit/Player.js",
 	"bin-debug/game_logic/Rule/RuleMgr.js",
 	"bin-debug/game_logic/Scene/SceneMgr.js",
@@ -28,7 +30,7 @@ var game_file_list = [
 	"bin-debug/game_logic/Theme/ThemeMgr.js",
 	"bin-debug/game_view/login/LoginView.js",
 	"bin-debug/game_view/PanelEnum.js",
-	"bin-debug/game_core/Resource/ResourceMgr.js",
+	"bin-debug/GameEntry.js",
 	//----auto game_file_list end----
 ];
 

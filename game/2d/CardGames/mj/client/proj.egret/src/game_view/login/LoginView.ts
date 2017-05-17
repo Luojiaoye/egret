@@ -29,7 +29,7 @@ class LoginView extends WindowBase{
         });
 
         // 链接服务器
-        SocketMgr.inst.connect("echo.websocket.org", 80);
+        SocketMgr.inst.connect("localhost", 818);
     }
 
     removeEvent(): void {
