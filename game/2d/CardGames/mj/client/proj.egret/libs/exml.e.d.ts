@@ -54,3 +54,7 @@ declare module skins{
 	class LoginView extends eui.Skin{
 	}
 }
+declare module skins{
+	class MainMenuView extends eui.Skin{
+	}
+}

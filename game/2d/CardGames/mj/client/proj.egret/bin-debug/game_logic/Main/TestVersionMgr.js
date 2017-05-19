@@ -28,6 +28,10 @@ var TestVersionMgr = (function () {
             var loginView = new LoginView(PanelEnum.LOGIN);
             WindowMgr.inst.show(loginView.name); // 显示界面
         });
+        // 创建玩家
+        var player = PlayerMgr.inst.createPlayer(1);
+        player.gender = false;
+        player.born(50, 420);
     };
     Object.defineProperty(TestVersionMgr, "inst", {
         /*对外提供唯一单例*/

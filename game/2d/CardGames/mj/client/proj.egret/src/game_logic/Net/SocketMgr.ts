@@ -22,6 +22,7 @@ class SocketMgr{
         let cmd:string = "well done!";
         // 链接成功的处理逻辑
         this._socket.writeUTF(cmd);
+        this._socket.flush();
     }
 
     // 接收协议
@@ -42,6 +43,11 @@ class SocketMgr{
     * */
     public connect(host:string, port:number):void{
         this._socket.connect(host, port);
+    }
+
+    /*url链接服务器*/
+    public conectByUrl(url:string):void{
+        this._socket.connectByUrl(url);
     }
 
     private static _inst:SocketMgr = null;

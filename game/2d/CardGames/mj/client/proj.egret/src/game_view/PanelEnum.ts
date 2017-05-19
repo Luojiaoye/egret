@@ -5,4 +5,6 @@
 class PanelEnum{
     /*登录界面*/
     public static LOGIN:string = "LoginView";
+    /*菜单按钮*/
+    public static MENU:string = "MainMenuView";
 }

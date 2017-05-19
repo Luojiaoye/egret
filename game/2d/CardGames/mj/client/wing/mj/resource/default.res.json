@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,resource_json,agree_png,agree_kuang_png,Button_Public_png,Button_WeiXinLogon_png,coin_close_png,EditBack_png,hall_bg_jpg,loginBg_jpg,logo_png,logo1_png,wenzi_png,xieyiBg_png,youke_png,theme_json",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,resource_json,agree_png,agree_kuang_png,Button_Public_png,Button_WeiXinLogon_png,coin_close_png,EditBack_png,hall_bg_jpg,loginBg_jpg,logo_png,logo1_png,wenzi_png,xieyiBg_png,youke_png,theme_json,Button_Set_png,xiaolaba_png,1001_png",
 			"name": "preload"
 		}
 	],
@@ -210,6 +210,21 @@
 			"name": "theme_json",
 			"type": "json",
 			"url": "assets/theme/theme.json"
+		},
+		{
+			"name": "Button_Set_png",
+			"type": "image",
+			"url": "assets/image/Button_Set.png"
+		},
+		{
+			"name": "xiaolaba_png",
+			"type": "image",
+			"url": "assets/image/xiaolaba.png"
+		},
+		{
+			"name": "1001_png",
+			"type": "image",
+			"url": "assets/image/1001.png"
 		}
 	]
 }

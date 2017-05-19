@@ -29,7 +29,9 @@ class LoginView extends WindowBase{
         });
 
         // 链接服务器
-        SocketMgr.inst.connect("localhost", 818);
+        //SocketMgr.inst.connect("127.0.0.1", 8080);
+        // SocketMgr.inst.conectByUrl("ws://localhost:8080/TestWebSocket/mj");
+        SocketMgr.inst.conectByUrl("ws://localhost:8080/mj");
     }
 
     removeEvent(): void {

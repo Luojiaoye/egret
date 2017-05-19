@@ -14,6 +14,18 @@ var PlayerMgr = (function () {
     PlayerMgr.prototype.init = function () {
         this._dataPool = {};
     };
+    /*创建玩家*/
+    PlayerMgr.prototype.createPlayer = function (id) {
+        if (this._dataPool[id])
+            return this._dataPool[id];
+        var player = new Player(id);
+        this._dataPool[id] = player;
+        return player;
+    };
+    /*获取玩家*/
+    PlayerMgr.prototype.getPlayer = function (id) {
+        return this._dataPool[id];
+    };
     Object.defineProperty(PlayerMgr, "inst", {
         /*对外提供唯一单例*/
         get: function () {

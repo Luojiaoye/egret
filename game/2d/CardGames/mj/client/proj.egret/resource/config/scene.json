@@ -1,0 +1,10 @@
+{
+  "1001":{
+    "sceneId":1001,
+    "sceneBg":"hall_bg_jpg"
+  },
+  "1002":{
+    "sceneId":1002,
+    "sceneBg":"hall_bg_jpg"
+  }
+}

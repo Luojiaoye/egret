@@ -9,6 +9,7 @@ var Scene = (function () {
     function Scene(id) {
         this._ready = false;
         this._id = id;
+        // JSON.parse();
     }
     Object.defineProperty(Scene.prototype, "id", {
         /*场景id*/
@@ -24,11 +25,18 @@ var Scene = (function () {
             return;
         trace("渲染场景");
         var bg = new egret.Bitmap();
-        var map = "hall_bg_jpg";
+        var map = "1001_png"; //"hall_bg_jpg";
         bg.texture = ResourceMgr.inst.getRes(map);
         LayerMgr.inst.sceneLayer.addChild(bg);
         trace("绘制地图");
         this._ready = true;
+        // 添加桌子
+        var table = new Table(1);
+        table.rollDice();
+        // 添加玩家
+        var player = PlayerMgr.inst.getPlayer(1);
+        if (player)
+            player.render();
     };
     /*销毁*/
     Scene.prototype.dispose = function () {

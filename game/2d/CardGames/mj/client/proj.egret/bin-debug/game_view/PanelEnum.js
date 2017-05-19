@@ -12,4 +12,6 @@ var PanelEnum = (function () {
 }());
 /*登录界面*/
 PanelEnum.LOGIN = "LoginView";
+/*菜单按钮*/
+PanelEnum.MENU = "MainMenuView";
 __reflect(PanelEnum.prototype, "PanelEnum");

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.MainMenuView" width="139" height="52" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="btnSay" source="xiaolaba_png" x="0" y="0"/>
+	<e:Image id="btnSys" source="button_set_png" x="73" y="0"/>
+</e:Skin>

@@ -1,7 +1,7 @@
 {
 	"groups":[
 		{
-			"keys":"hall_bg_jpg",
+			"keys":"xiaolaba_png,1001_png,button_set_png,head1_png,head0_png",
 			"name":"preload"
 		},
 		{
@@ -183,6 +183,31 @@
 			"name":"radiobutton_unselect_png",
 			"type":"image",
 			"url":"assets/image/radiobutton_unselect.png"
+		},
+		{
+			"name":"xiaolaba_png",
+			"type":"image",
+			"url":"assets/image/xiaolaba.png"
+		},
+		{
+			"name":"1001_png",
+			"type":"image",
+			"url":"assets/image/1001.png"
+		},
+		{
+			"name":"button_set_png",
+			"type":"image",
+			"url":"assets/image/Button_Set.png"
+		},
+		{
+			"name":"head1_png",
+			"type":"image",
+			"url":"assets/image/Head1.png"
+		},
+		{
+			"name":"head0_png",
+			"type":"image",
+			"url":"assets/image/Head0.png"
 		}
 	]
 }

@@ -21,6 +21,7 @@ var SocketMgr = (function () {
         var cmd = "well done!";
         // 链接成功的处理逻辑
         this._socket.writeUTF(cmd);
+        this._socket.flush();
     };
     // 接收协议
     SocketMgr.prototype.onReceiveMessage = function (e) {
@@ -37,6 +38,10 @@ var SocketMgr = (function () {
     * */
     SocketMgr.prototype.connect = function (host, port) {
         this._socket.connect(host, port);
+    };
+    /*url链接服务器*/
+    SocketMgr.prototype.conectByUrl = function (url) {
+        this._socket.connectByUrl(url);
     };
     Object.defineProperty(SocketMgr, "inst", {
         /*对外提供唯一单例*/

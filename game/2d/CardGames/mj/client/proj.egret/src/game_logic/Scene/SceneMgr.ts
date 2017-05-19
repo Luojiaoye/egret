@@ -21,6 +21,10 @@ class SceneMgr{
         // 隐藏所有界面
         WindowMgr.inst.hideWindows();
 
+        // 显示菜单界面
+        let menu:MainMenuView = new MainMenuView(PanelEnum.MENU);   //[此类界面可以在主界面上创建一次即可]
+        WindowMgr.inst.show(menu.name);
+
         trace("进入场景" + id);
         if(this.verify(id)){
             this._scene = new Scene(id);
